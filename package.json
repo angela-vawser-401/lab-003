@@ -26,5 +26,8 @@
   "homepage": "https://github.com/angela-vawser-401/lab-003#readme",
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "shortid": "^2.2.15"
   }
 }
