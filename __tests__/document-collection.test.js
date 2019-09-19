@@ -26,7 +26,7 @@ describe('Document Collection', () => {
 
     return documents.save(sample)
       .then(object => {
-        expect(path.dirname(writeFile.mock.calls[0][0])).tobe(dir);
+        expect(path.dirname(writeFile.mock.calls[0][0])).toBe(dir);
         expect(writeFile.mock.calls[0][1]).toBe(JSON.stringify(sample));
         expect(object._id).toEqual(expect.any(String));
     });
@@ -50,7 +50,31 @@ describe('Document Collection', () => {
     return documents.get(id)
       .then(object => {
         expect(readFile.mock.calls[0][0]).toBe(`${dir}/${id}.json`);
-        expect(object.id).toBe('finger');
+        expect(object._id).toBe('finger');
+      });
+  });
+
+  it('reads all objects from a directory', () => {
+    const sample = {
+      key: 'happy',
+      truth: false,
+      _id: 'finger'
+    };
+
+    const readDirPromise = Promise.resolve(['finger.json']);
+    readdir.mockReturnValueOnce(readDirPromise);
+
+    const readPromise = Promise.resolve(JSON.stringify(sample));
+    readFile.mockReturnValueOnce(readPromise);
+
+    const directory = 'documents';
+    const documents = new DocumentCollection(directory);
+
+    return documents.getAll()
+      .then(array => {
+        expect(readdir.mock.calls[0][0]).toBe(directory);
+        expect(readFile.mock.calls[0][0]).toBe( `${directory}/${sample._id}.json`);
+        expect(array[0]._id).toBe(sample._id);
       });
   });
 });
