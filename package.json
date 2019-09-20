@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/angela-vawser-401/lab-003#readme",
   "devDependencies": {
+    "eslint": "^6.4.0",
     "jest": "^24.9.0"
   },
   "dependencies": {
