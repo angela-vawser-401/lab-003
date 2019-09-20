@@ -29,7 +29,7 @@ describe('Document Collection', () => {
         expect(path.dirname(writeFile.mock.calls[0][0])).toBe(dir);
         expect(writeFile.mock.calls[0][1]).toBe(JSON.stringify(sample));
         expect(object._id).toEqual(expect.any(String));
-    });
+      });
   });
 
   it('reads an object from a file', () => {
@@ -73,7 +73,7 @@ describe('Document Collection', () => {
     return documents.getAll()
       .then(array => {
         expect(readdir.mock.calls[0][0]).toBe(directory);
-        expect(readFile.mock.calls[0][0]).toBe( `${directory}/${sample._id}.json`);
+        expect(readFile.mock.calls[0][0]).toBe(`${directory}/${sample._id}.json`);
         expect(array[0]._id).toBe(sample._id);
       });
   });
