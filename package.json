@@ -1,0 +1,34 @@
+{
+  "name": "lab-003",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angela-vawser-401/lab-003.git"
+  },
+  "keywords": [],
+  "author": "Angela Vawser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angela-vawser-401/lab-003/issues"
+  },
+  "homepage": "https://github.com/angela-vawser-401/lab-003#readme",
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "shortid": "^2.2.15"
+  }
+}
