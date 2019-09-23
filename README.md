@@ -1,11 +1,12 @@
-# LAB - 03
+# LAB - 03 & LAB - 04
 
-## Async
+## Async & Data Modeling
 
 ### Author: Angela Vawser
 
 ### Links and Resources
 * [submission PR](https://github.com/angela-vawser-401/lab-003/pull/1)
+* [submission PR](https://github.com/angela-vawser-401/lab-003/pull/2)
 * [travis](https://travis-ci.com/angela-vawser-401/lab-003)
 
 #### Documentation
