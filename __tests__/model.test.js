@@ -21,7 +21,7 @@ describe('Model', () => {
   const schemaConfig = {
     // doesn't actually mater as long as passed to schema:
     name: {
-      type: String,
+      type: 'string',
       required: true
     }
   };
@@ -33,7 +33,7 @@ describe('Model', () => {
   it('creates a schema and document collection', () => {
 
     // assert:
-    
+
     // Cats.schema should be an instance of Schema, 
     expect(Cats.schema).toBeInstanceOf(Schema);
     // with schemaConfig as saved schema
@@ -43,14 +43,14 @@ describe('Model', () => {
     // to an instance of DocumentCollection
     // (with collection.folder ending in "cats")
     const getCollectionCalls = getCollection.mock.calls;
-    expect(getCollectionCalls.length).toBe(1); 
+    expect(getCollectionCalls.length).toBe(1);
     expect(getCollection.mock.calls[0][0]).toBe('cats');
 
     expect(Cats.collectionPromise).not.toBeNull();
     return Cats.collectionPromise.then(collection => {
       expect(collection).toBe(mockCollection);
     });
-    
+
   });
 
   it('creates a model', () => {
@@ -59,7 +59,7 @@ describe('Model', () => {
     };
 
     mockCollection.save.mockResolvedValue(pojo);
-    
+
     return Cats.create(pojo)
       .then(created => {
         expect(created).toEqual(pojo);
